@@ -5,7 +5,7 @@ import numpy as np
 #import time
 st.title("Captcha Recognition")
 
-#@st.cache (hash_funcs={FileReference: hash_file_reference})
+#@st.cache 
 def load():
     model=load_model(r"/app/captcha_recognition/model.h5")  
     #time.sleep(2)
