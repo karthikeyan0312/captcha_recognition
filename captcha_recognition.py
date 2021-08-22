@@ -5,7 +5,7 @@ import numpy as np
 
 st.title("Captcha Recognition")
 
-@st.cache
+@st.cache(suppress_st_warning=True)
 def load():
     model=load_model(r"/app/captcha_recognition/model.h5")  
     return model
