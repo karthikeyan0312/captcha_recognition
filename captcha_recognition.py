@@ -16,7 +16,7 @@ model=load()
 symbols = "abcdefghijklmnopqrstuvwxyz0123456789" # All symbols captcha can contain
 num_symbols = len(symbols)
 img_shape = (50, 200, 1)
-# Define function to predict captcha
+
 def predict(upload):
     #img = cv2.imread(im, cv2.IMREAD_GRAYSCALE)
     file_bytes = np.asarray(bytearray(upload.read()),dtype=np.uint8)
