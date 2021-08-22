@@ -4,8 +4,14 @@ import cv2
 import numpy as np
 
 st.title("Captcha Recognition")
+class FileReference:
+    def __init__(self, filename):
+        self.filename = filename
 
-@st.cache(suppress_st_warning=True)
+def hash_file_reference(file_reference):
+    with open(file_reference.filename) as f:
+      return f.read()
+@st.cache(hash_funcs={FooType: hash})
 def load():
     model=load_model(r"/app/captcha_recognition/model.h5")  
     return model
