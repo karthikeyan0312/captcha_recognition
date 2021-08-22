@@ -11,9 +11,9 @@ class FileReference:
 def hash_file_reference(file_reference):
     with open(file_reference.filename) as f:
       return f.read()
-@st.cache(hash_funcs={FooType: hash})
-def load():
-    model=load_model(r"/app/captcha_recognition/model.h5")  
+@st.cache(hash_funcs={FileReference: hash_file_reference})
+def load(path=r"/app/captcha_recognition/model.h5"):
+    model=load_model(path)  
     return model
 
 model=load()
