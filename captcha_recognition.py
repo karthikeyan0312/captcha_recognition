@@ -43,7 +43,6 @@ upload=st.file_uploader('Choose a File ',type=["jpg","jpeg","png"])
 if upload  is not None:
     try:
         p=predict(upload)
-        print(p)
         st.success("Predicted Captcha : "+p)
     except:
         st.warning("You Have Upladed Wrong Image")
