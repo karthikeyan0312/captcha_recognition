@@ -1,5 +1,4 @@
 streamlit
 tensorflow
-keras
 opencv-python
-numpy
+numpy==1.19.2
