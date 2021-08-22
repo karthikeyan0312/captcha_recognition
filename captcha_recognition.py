@@ -2,19 +2,13 @@ import streamlit as st
 from tensorflow.keras.models import load_model
 import cv2
 import numpy as np
-import time
+#import time
 st.title("Captcha Recognition")
-class FileReference:
-    def __init__(self, filename):
-        self.filename = filename
 
-def hash_file_reference(file_reference):
-    with open(file_reference.filename) as f:
-      return f.read()
-@st.cache#(hash_funcs={FileReference: hash_file_reference})
-def load(path=r"/app/captcha_recognition/model.h5"):
-    model=load_model(path)  
-    time.sleep(2)
+#@st.cache (hash_funcs={FileReference: hash_file_reference})
+def load():
+    model=load_model(r"/app/captcha_recognition/model.h5")  
+    #time.sleep(2)
     return model
 
 model=load()
