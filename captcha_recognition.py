@@ -7,7 +7,7 @@ st.title("Captcha Recognition")
 
 @st.cache
 def load():
-    model=load_model(r"app/captcha_recognition/model.h5")  
+    model=load_model(r"/app/captcha_recognition/model.h5")  
     return model
 
 model=load()
